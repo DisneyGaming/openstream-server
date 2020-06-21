@@ -14,7 +14,7 @@ Openstream is a fork open Sunshine Server. Creating open source solution for Gam
 ### Requirements:
 Ubuntu 20.04:
 
-	sudo apt install git cmake libssl-dev libavdevice-dev libboost-thread-dev libboost-filesystem-dev libboost-log-dev libpulse-dev libopus-dev libxtst-dev libx11-dev libxfixes-dev libevdev-dev libxcb1-dev libxcb-shm0-dev libxcb-xfixes0-dev
+	sudo apt install git xterm curl cmake libssl-dev libavdevice-dev libboost-thread-dev libboost-filesystem-dev libboost-log-dev libpulse-dev libopus-dev libxtst-dev libx11-dev libxfixes-dev libevdev-dev libxcb1-dev libxcb-shm0-dev libxcb-xfixes0-dev
 
 ### Compilation:
 - `git clone https://github.com/LS3solutions/openstream-server.git --recurse-submodules`
