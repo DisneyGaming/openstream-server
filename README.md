@@ -29,11 +29,11 @@ openstream needs access to uinput to create mouse and gamepad events:
 - Create a file: "/etc/udev/rules.d/85-openstream-input.rules"
 - The contents of the file is as follows:
 	KERNEL=="uinput", GROUP="input", mode="0660"
-- assets/openstream.conf is an example configuration file. Modify it as you see fit and use it by running: "openstream path/to/openstream.conf"
+- assets/openstream-server.conf is an example configuration file. Modify it as you see fit and use it by running: "openstream path/to/openstream-server.conf"
 - path/to/build/dir/openstream.service is used to start openstream in the background:
-	- `cp openstream.service $HOME/.config/systemd/user/`
-	- Modify $HOME/.config/systemd/user/openstream.conf to point to the openstream executable
-	- `systemctl --user start openstream`
+	- `cp openstream-server.service $HOME/.config/systemd/user/`
+	- Modify $HOME/.config/systemd/user/openstream-server.conf to point to the openstream executable
+	- `systemctl --user start openstream-server`
 
 - assets/apps.json is an [example](README.md#application-list) of a list of applications that are started just before running a stream
 
@@ -54,8 +54,8 @@ openstream needs access to uinput to create mouse and gamepad events:
 	MSYS2 : mingw-w64-x86_64-openssl mingw-w64-x86_64-cmake mingw-w64-x86_64-toolchain mingw-w64-x86_64-ffmpeg mingw-w64-x86_64-boost
 
 ### Compilation:
-- `git clone https://github.com/loki-47-6F-64/openstream.git --recurse-submodules`
-- `cd openstream && mkdir build && cd build`
+- `git clone https://github.com/LS3solutions/openstream-server.git --recurse-submodules`
+- `cd openstream-server && mkdir build && cd build`
 - `cmake -G"Unix Makefiles" ..`
 - `make`
 
