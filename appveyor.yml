@@ -20,8 +20,8 @@ before_build:
 build_script:
   - cmd: set OLDPATH=%PATH%
   - cmd: set PATH=C:\msys64\mingw64\bin
-  - sh: cmake -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DSUNSHINE_EXECUTABLE_PATH=sunshine -DSUNSHINE_ASSETS_DIR=/etc/sunshine ..
-  - cmd: cmake -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DSUNSHINE_STANDALONE=ON -DSUNSHINE_ASSETS_DIR=assets -G "MinGW Makefiles" ..
+  - sh: cmake -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DOPENSTREAM_EXECUTABLE_PATH=openstream -DOPENSTREAM_ASSETS_DIR=/etc/openstream ..
+  - cmd: cmake -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DOPENSTREAM_STANDALONE=ON -DOPENSTREAM_ASSETS_DIR=assets -G "MinGW Makefiles" ..
   - sh: make -j$(nproc)
   - cmd: mingw32-make -j2
   - cmd: set PATH=%OLDPATH%
@@ -29,10 +29,10 @@ build_script:
 after_build:
   - sh: ./gen-deb
   - cmd: Del ..\assets\apps_linux.json
-  - cmd: 7z a Sunshine-Windows.zip ..\assets
-  - cmd: 7z a Sunshine-Windows.zip sunshine.exe
-  - cmd: 7z a Sunshine-Windows.zip tools\dxgi-info.exe
-  - cmd: 7z a Sunshine-Windows.zip tools\audio-info.exe
-  - cmd: appveyor PushArtifact Sunshine-Windows.zip
-  - sh: appveyor PushArtifact package-deb/sunshine.deb
-  - sh: appveyor PushArtifact sunshine.service
+  - cmd: 7z a Openstream-Windows.zip ..\assets
+  - cmd: 7z a Openstream-Windows.zip openstream.exe
+  - cmd: 7z a Openstream-Windows.zip tools\dxgi-info.exe
+  - cmd: 7z a Openstream-Windows.zip tools\audio-info.exe
+  - cmd: appveyor PushArtifact Openstream-Windows.zip
+  - sh: appveyor PushArtifact package-deb/openstream.deb
+  - sh: appveyor PushArtifact openstream.service
