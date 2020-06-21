@@ -99,9 +99,10 @@ openstream needs access to uinput to create mouse and gamepad events:
 
 
 ## Credits:
+- [Sunshine](https://github.com/loki-47-6F-64/sunshine)
 - [Simple-Web-Server](https://gitlab.com/eidheim/Simple-Web-Server)
 - [Moonlight](https://github.com/moonlight-stream)
-- [Looking-Glass](https://github.com/gnif/LookingGlass) (For showing me how to properly capture frames on Windows, saving me a lot of time :)
+- [Looking-Glass](https://github.com/gnif/LookingGlass)
 
 ## Application List:
 - You can use Environment variables in place of values
