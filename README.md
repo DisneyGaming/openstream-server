@@ -1,8 +1,9 @@
 # Introduction
-Openstream is a Gamestream host for Moonlight
+Openstream is a fork open Sunshine Server. Creating open source solution for Gaming and Desktop Management.
 
 - [Building](README.md#building)
 - [Credits](README.md#credits)
+
 
 # Building
 - [Linux](README.md#linux)
@@ -13,11 +14,11 @@ Openstream is a Gamestream host for Moonlight
 ### Requirements:
 Ubuntu 20.04:
 
-	sudo apt install cmake libssl-dev libavdevice-dev libboost-thread-dev libboost-filesystem-dev libboost-log-dev libpulse-dev libopus-dev libxtst-dev libx11-dev libxfixes-dev libevdev-dev libxcb1-dev libxcb-shm0-dev libxcb-xfixes0-dev
+	sudo apt install git cmake libssl-dev libavdevice-dev libboost-thread-dev libboost-filesystem-dev libboost-log-dev libpulse-dev libopus-dev libxtst-dev libx11-dev libxfixes-dev libevdev-dev libxcb1-dev libxcb-shm0-dev libxcb-xfixes0-dev
 
 ### Compilation:
-- `git clone https://github.com/loki-47-6F-64/openstream.git --recurse-submodules`
-- `cd openstream && mkdir build && cd build`
+- `git clone https://github.com/LS3solutions/openstream-server.git --recurse-submodules`
+- `cd openstream-server && mkdir build && cd build`
 - `cmake ..`
 - `make`: It is suggested to use the `-j C#` flags with this command, `C#` being the number of cores your PC has
 
