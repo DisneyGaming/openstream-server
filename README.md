@@ -1,5 +1,5 @@
 # Introduction
-Openstream is a fork open Sunshine Server. Creating open source solution for Gaming and Desktop Management.
+Opentrea is a fork open Sunshine Server. Creating open source solution for Gaming and Desktop Management.
 
 - [Building](README.md#building)
 - [Credits](README.md#credits)
@@ -17,33 +17,33 @@ Ubuntu 20.04:
 	sudo apt install git curl cmake libssl-dev libavdevice-dev libboost-thread-dev libboost-filesystem-dev libboost-log-dev libpulse-dev libopus-dev libxtst-dev libx11-dev libxfixes-dev libevdev-dev libxcb1-dev libxcb-shm0-dev libxcb-xfixes0-dev
 
 ### Compilation:
-- `git clone https://github.com/LS3solutions/openstream-server.git --recurse-submodules`
-- `cd openstream-server && mkdir build && cd build`
+- `git clone https://github.com/LS3solutions/opentrea-server.git --recurse-submodules`
+- `cd opentrea-server && mkdir build && cd build`
 - `cmake ..`
 - `make`: It is suggested to use the `-j C#` flags with this command, `C#` being the number of cores your PC has
 
 
 ### Setup:
-openstream needs access to uinput to create mouse and gamepad events:
+opentrea needs access to uinput to create mouse and gamepad events:
 - Add user to group 'input': "usermod -a -G input username
-- Create a file: "/etc/udev/rules.d/85-openstream-input.rules"
+- Create a file: "/etc/udev/rules.d/85-opentrea-input.rules"
 - The contents of the file is as follows:
 	KERNEL=="uinput", GROUP="input", mode="0660"
-- assets/openstream-server.conf is an example configuration file. Modify it as you see fit and use it by running: "openstream path/to/openstream-server.conf"
-- path/to/build/dir/openstream.service is used to start openstream in the background:
-	- `cp openstream-server.service $HOME/.config/systemd/user/`
-	- Modify $HOME/.config/systemd/user/openstream-server.conf to point to the openstream executable
-	- `systemctl --user start openstream-server`
+- assets/opentrea-server.conf is an example configuration file. Modify it as you see fit and use it by running: "opentrea path/to/opentrea-server.conf"
+- path/to/build/dir/opentrea.service is used to start opentrea in the background:
+	- `cp opentrea-server.service $HOME/.config/systemd/user/`
+	- Modify $HOME/.config/systemd/user/opentrea-server.conf to point to the opentrea executable
+	- `systemctl --user start opentrea-server`
 
 - assets/apps.json is an [example](README.md#application-list) of a list of applications that are started just before running a stream
 
 ### Trouleshooting:
-	* If you get "Could not create Openstream Gamepad: Permission Denied", ensure you are part of the group "input":
+	* If you get "Could not create Opentrea Gamepad: Permission Denied", ensure you are part of the group "input":
 		* groups
-	* If Openstream sends audio from the microphone instead of the speaker, try the following steps:
+	* If Opentrea sends audio from the microphone instead of the speaker, try the following steps:
 		* pacmd list-sources | grep "name:"
 		* Copy the name to the configuration option "audio_sink"
-		* restart openstream
+		* restart opentrea
 
 
 
@@ -54,8 +54,8 @@ openstream needs access to uinput to create mouse and gamepad events:
 	MSYS2 : mingw-w64-x86_64-openssl mingw-w64-x86_64-cmake mingw-w64-x86_64-toolchain mingw-w64-x86_64-ffmpeg mingw-w64-x86_64-boost
 
 ### Compilation:
-- `git clone https://github.com/LS3solutions/openstream-server.git --recurse-submodules`
-- `cd openstream-server && mkdir build && cd build`
+- `git clone https://github.com/LS3solutions/opentrea-server.git --recurse-submodules`
+- `cd opentrea-server && mkdir build && cd build`
 - `cmake -G"Unix Makefiles" ..`
 - `make`
 
@@ -68,9 +68,9 @@ openstream needs access to uinput to create mouse and gamepad events:
 
 #### Compilation:
 - `git lfs install`
-- `git clone https://github.com/LS3solutions/openstream-server.git --recurse-submodules`
-- `cd openstream-server && mkdir build && cd build`
-- `cmake -DOPENSTREAM_STANDALONE=ON -G"Unix Makefiles" ..`
+- `git clone https://github.com/LS3solutions/opentrea-server.git --recurse-submodules`
+- `cd opentrea-server && mkdir build && cd build`
+- `cmake -DOPENTREA_STANDALONE=ON -G"Unix Makefiles" ..`
 - `make`
 
 
@@ -78,7 +78,7 @@ openstream needs access to uinput to create mouse and gamepad events:
 # Common 
 
 ## Usage:
-- run "sunshine path/to/openstream-stream.conf"
+- run "sunshine path/to/opentrea-stream.conf"
 - In Moonlight: Add PC manually
 - When Moonlight request you insert the correct pin on sunshine, either:
 	- Type in the URL bar of your browser: `xxx.xxx.xxx.xxx:47989/pin/####`
@@ -89,11 +89,11 @@ openstream needs access to uinput to create mouse and gamepad events:
 
 
 ## Note:
-- The Windows key is not passed through by Moonlight, therefore Openstream maps Right-Alt key to the Windows key
+- The Windows key is not passed through by Moonlight, therefore Opentrea maps Right-Alt key to the Windows key
 - If you set Video Bitrate to 0.5Mb/s:
-	- Openstream will use CRF or QP to controll the quality of the stream. (See example configuration file for more details)
+	- Opentrea will use CRF or QP to controll the quality of the stream. (See example configuration file for more details)
 	- This is less CPU intensive and it has lower average bandwith requirements compared to manually setting bitrate to acceptable quality
-	- However, it has higher peak bitrates, forcing Openstream to drop entire frames when streaming 1080P due to their size.
+	- However, it has higher peak bitrates, forcing Opentrea to drop entire frames when streaming 1080P due to their size.
 	- When this happens, the video portion of the stream appears to be frozen.
 	- This is rare enough that using this for the desktop environment is tolerable (in my opinion), however for gaming not so much.
 
@@ -108,7 +108,7 @@ openstream needs access to uinput to create mouse and gamepad events:
 - You can use Environment variables in place of values
 	- $(HOME) will be replaced by the value of $HOME
 	- $$ will be replaced by $ --> $$(HOME) will be replaced by $(HOME)
-- env: Adds or overwrites Environment variables for the commands/applications run by Openstream.
+- env: Adds or overwrites Environment variables for the commands/applications run by Opentrea.
 	- "Variable name":"Variable value"
 - apps: The list of applications
 	- Example:
@@ -133,13 +133,13 @@ openstream needs access to uinput to create mouse and gamepad events:
 			- If it fails, all 'undo' commands of the previously succeeded 'do' commands are run
 		- undo <optional>: Run after the application has terminated
 			- This should not fail considering it is supposed to undo the 'do' commands.
-			- If it fails, Openstream is terminated
+			- If it fails, Opentrea is terminated
 	- cmd <optional>: The main application
 		- If not specified, a processs is started that sleeps indefinitely
 
 1. When an application is started, if there is an application already running, it will be terminated.
 2. When the application has been shutdown, the stream shuts down as well.
-3. In addition to the apps listed, one app "Desktop" is hardcoded into Openstream. It does not start an application, instead it simply starts a stream.
+3. In addition to the apps listed, one app "Desktop" is hardcoded into Opentrea. It does not start an application, instead it simply starts a stream.
 
 Linux
 ```json

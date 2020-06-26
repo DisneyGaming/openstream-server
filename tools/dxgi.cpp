@@ -7,7 +7,7 @@
 
 #include <iostream>
 
-#include "openstream/utility.h"
+#include "opentrea/utility.h"
 
 using namespace std::literals;
 namespace dxgi {
