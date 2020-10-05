@@ -17,8 +17,8 @@ Ubuntu 20.04:
 	sudo apt install git curl cmake libssl-dev libavdevice-dev libboost-thread-dev libboost-filesystem-dev libboost-log-dev libpulse-dev libopus-dev libxtst-dev libx11-dev libxfixes-dev libevdev-dev libxcb1-dev libxcb-shm0-dev libxcb-xfixes0-dev
 
 ### Compilation:
-- `git clone https://github.com/LS3solutions/opentrea-server.git --recurse-submodules`
-- `cd opentrea-server && mkdir build && cd build`
+- `git clone https://github.com/LS3solutions/openstream-server.git --recurse-submodules`
+- `cd openstream-server && mkdir build && cd build`
 - `cmake ..`
 - `make`: It is suggested to use the `-j C#` flags with this command, `C#` being the number of cores your PC has
 
@@ -54,8 +54,8 @@ opentrea needs access to uinput to create mouse and gamepad events:
 	MSYS2 : mingw-w64-x86_64-openssl mingw-w64-x86_64-cmake mingw-w64-x86_64-toolchain mingw-w64-x86_64-ffmpeg mingw-w64-x86_64-boost
 
 ### Compilation:
-- `git clone https://github.com/LS3solutions/opentrea-server.git --recurse-submodules`
-- `cd opentrea-server && mkdir build && cd build`
+- `git clone https://github.com/LS3solutions/openstream-server.git --recurse-submodules`
+- `cd openstream-server && mkdir build && cd build`
 - `cmake -G"Unix Makefiles" ..`
 - `make`
 
@@ -68,8 +68,8 @@ opentrea needs access to uinput to create mouse and gamepad events:
 
 #### Compilation:
 - `git lfs install`
-- `git clone https://github.com/LS3solutions/opentrea-server.git --recurse-submodules`
-- `cd opentrea-server && mkdir build && cd build`
+- `git clone https://github.com/LS3solutions/openstream-server.git --recurse-submodules`
+- `cd openstream-server && mkdir build && cd build`
 - `cmake -DOPENTREA_STANDALONE=ON -G"Unix Makefiles" ..`
 - `make`
 
